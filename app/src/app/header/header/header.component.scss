@@ -1,0 +1,25 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: white;;
+    font-size: 14px;
+}
+
+a:hover,
+a:active {
+    color: gray;
+}
+
+.content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}

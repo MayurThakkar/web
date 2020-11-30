@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "meter-base-project": {
+      "hosting": {
+        "app": [
+          "meter-base-project"
+        ]
+      }
+    }
+  }
+}
