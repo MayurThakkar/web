@@ -21,18 +21,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module'
 import { AuthModule } from './auth/auth.module';
 
-import { meterReducer } from '../app/meterlist/state/meter.reducer';
 import { reducers } from './app.reducer';
 
 import { AppComponent } from './app.component';
-import { MeterlistComponent } from './meterlist/feature/meterlist.component'
-import { MeterComponent } from './meter/meter.component';
-import { DialogComponent } from './dialog/dialog.component';
-import { HeaderComponent } from './header/header/header.component';
 
 import { AuthService } from '../app/auth/auth.service';
-import { MeterService } from './meterlist/meter.service';
 import { UIService } from './shared/ui.service';
+import { MeterService } from './meter/meter.service';
+import { MeterModule } from './meter/meter.module';
+import { DialogComponent } from './dialog/feature/dialog.component';
+import { HeaderComponent } from './header/feature/header/header.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -48,10 +46,8 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
 @NgModule({
   declarations: [
     AppComponent,
-    MeterlistComponent,
-    MeterComponent,
     DialogComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -64,8 +60,8 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     FlexLayoutModule,
     HttpClientModule,
     MaterialModule,
+    MeterModule,
     StoreModule.forRoot(reducers),
-    StoreModule.forFeature('meterdata', meterReducer),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

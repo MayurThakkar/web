@@ -3,9 +3,10 @@ import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+
 import { SharedModule } from '../shared/shared.module';
+import { SignupComponent } from './feature/signup/signup.component';
+import { LoginComponent } from './feature/login/login.component';
 
 @NgModule({
     declarations: [

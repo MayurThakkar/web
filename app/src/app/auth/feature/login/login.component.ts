@@ -1,19 +1,17 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { UIService } from 'src/app/shared/ui.service';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
 })
-export class SignupComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit, OnDestroy {
   private _loading: Subscription;
   isLoading = false;
-  maxDate: Date;
-  
 
   constructor(
     private _authService: AuthService,
@@ -21,8 +19,6 @@ export class SignupComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.maxDate = new Date();
-    this.maxDate.setFullYear(this.maxDate.getFullYear() - 18);
     this._loading = this._uiService.loadingStateChanged.subscribe((isLoading) => {
       this.isLoading = isLoading;
     });
@@ -35,8 +31,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(forms: NgForm) {
-    console.error(forms);
-    this._authService.resgisterUser({
+    this._authService.login({
       email: forms.value.email,
       password: forms.value.password
     })

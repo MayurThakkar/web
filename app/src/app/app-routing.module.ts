@@ -1,10 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AuthGuard } from './auth/signup/auth.guard';
-import { SignupComponent } from './auth/signup/signup.component';
-import { MeterComponent } from './meter/meter.component';
+import { AuthGuard } from './auth/auth.guard';
+import { LoginComponent } from './auth/feature/login/login.component';
+import { SignupComponent } from './auth/feature/signup/signup.component';
+import { MeterComponent } from './meter/feature/meter/meter.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

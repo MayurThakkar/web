@@ -5,10 +5,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { Store } from '@ngrx/store';
 
 import { AuthData } from './auth-data.model';
-import { MeterService } from '../meterlist/meter.service';
 import * as Auth from './auth-state/auth.actions';
 import * as fromRoot from '../app.reducer';
 import { UIService } from '../shared/ui.service';
+import { MeterService } from '../meter/meter.service';
 
 
 @Injectable()
