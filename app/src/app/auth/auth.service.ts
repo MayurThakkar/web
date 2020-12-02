@@ -8,6 +8,7 @@ import { AuthData } from './auth-data.model';
 import { MeterService } from '../meterlist/meter.service';
 import * as Auth from './auth-state/auth.actions';
 import * as fromRoot from '../app.reducer';
+import { UIService } from '../shared/ui.service';
 
 
 @Injectable()
@@ -17,7 +18,8 @@ export class AuthService {
         private _router: Router,
         private _ngAuth: AngularFireAuth,
         private _meterService: MeterService,
-        private _store: Store<fromRoot.State>
+        private _store: Store<fromRoot.State>,
+        private _uiService: UIService
     ) {}
 
     initAuthListener() {
@@ -35,23 +37,38 @@ export class AuthService {
     }
 
     resgisterUser(auth: AuthData) {
+        this._uiService.loadingStateChanged.next(true);
+            
         this._ngAuth.createUserWithEmailAndPassword(
             auth.email,
             auth.password
         )
+        .then(() => 
+            this._uiService.loadingStateChanged.next(false)
+        )
         .catch((error) => {
-            console.error("auth error", error);
+            this._uiService.loadingStateChanged.next(false);
+            this._uiService.showSnackBar(error.message, null, {
+                duration: 3000
+            });
         });
     }
 
     login(auth: AuthData) {
-        console.error("called login");
+        this._uiService.loadingStateChanged.next(true);
+
         this._ngAuth.signInWithEmailAndPassword(
             auth.email,
             auth.password
         )
+        .then(() => 
+            this._uiService.loadingStateChanged.next(false)
+        )
         .catch((error) => {
-            console.error("auth error", error);
+            this._uiService.loadingStateChanged.next(false);
+            this._uiService.showSnackBar(error.message, null, {
+                duration: 3000
+            });
         });
     }
 

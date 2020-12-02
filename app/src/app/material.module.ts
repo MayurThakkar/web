@@ -16,6 +16,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
     imports: [
@@ -30,9 +32,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
         MatInputModule,
         MatPaginatorModule,
         MatSelectModule,
+        MatSnackBarModule,
         MatSidenavModule,
         MatSlideToggleModule,
         MatSortModule,
+        MatProgressSpinnerModule,
         MatTabsModule,
         MatTableModule,
         MatToolbarModule,
@@ -49,9 +53,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
         MatInputModule,
         MatPaginatorModule,
         MatSelectModule,
+        MatSnackBarModule,
         MatSidenavModule,
         MatSlideToggleModule,
         MatSortModule,
+        MatProgressSpinnerModule,
         MatTabsModule,
         MatTableModule,
         MatToolbarModule
