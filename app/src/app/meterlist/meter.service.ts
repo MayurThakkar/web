@@ -8,16 +8,16 @@ import { Subscription } from 'rxjs'
 
 @Injectable()
 export class MeterService {
-  private _fireSubscription: Subscription[];
+  private _fireSubscription: Subscription;
   constructor(private db: AngularFirestore,
               private store: Store<fromMeter.MeterDataState>) {}
 
   getMeterList() {
-    this._fireSubscription.push( this.db.collection('meterData')
+    this.db.collection('meterData')
             .valueChanges()
             .subscribe((data: IDataDTO[]) => {
                 this.store.dispatch(new Meter.SetMeterData(data));
-    }));
+    });
   }
 
   addNewMeterData(newData: IDataDTO) {
@@ -29,6 +29,6 @@ export class MeterService {
   }
 
   cancelSubscription() {
-    this._fireSubscription.forEach((subs) => subs.unsubscribe());
+    this._fireSubscription.unsubscribe();
   }
 }

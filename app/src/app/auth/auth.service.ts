@@ -1,34 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/auth';
+
+import { Store } from '@ngrx/store';
+
 import { AuthData } from './auth-data.model';
 import { MeterService } from '../meterlist/meter.service';
+import * as Auth from './auth-state/auth.actions';
+import * as fromRoot from '../app.reducer';
+
 
 @Injectable()
 export class AuthService {
-    authChange = new Subject<boolean>();
-
-    private _isAuthenticated = false;
 
     constructor(
         private _router: Router,
         private _ngAuth: AngularFireAuth,
-        private _meterService: MeterService
+        private _meterService: MeterService,
+        private _store: Store<fromRoot.State>
     ) {}
 
     initAuthListener() {
         this._ngAuth.authState.subscribe((user) => {
             if (user) {
-                this._isAuthenticated = true;
-                this.authChange.next(true);
+                this._store.dispatch(new Auth.SetAuthenticated());
                 this._router.navigate(['/meter']);
             } else {
                 // TODO: deal with unsubscription undefined
                 // this._meterService.cancelSubscription();
-                this.authChange.next(false);
+                this._store.dispatch(new Auth.SetUnAuthenticated());
                 this._router.navigate(['/login']);
-                this._isAuthenticated = false;
             }
         });
     }
@@ -44,6 +45,7 @@ export class AuthService {
     }
 
     login(auth: AuthData) {
+        console.error("called login");
         this._ngAuth.signInWithEmailAndPassword(
             auth.email,
             auth.password
@@ -55,9 +57,5 @@ export class AuthService {
 
     logOut() {
         this._ngAuth.signOut();
-    }
-
-    isAuth() {
-        return this._isAuthenticated;
     }
 }
