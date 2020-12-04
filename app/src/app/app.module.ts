@@ -28,10 +28,9 @@ import { AppComponent } from './app.component';
 import { AuthService } from '../app/auth/auth.service';
 import { UIService } from './shared/ui.service';
 import { MeterService } from './meter/meter.service';
-import { MeterModule } from './meter/meter.module';
 import { DialogComponent } from './dialog/feature/dialog.component';
+import { MainComponent } from './main/feature/main.component';
 import { HeaderComponent } from './header/feature/header/header.component';
-
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -48,6 +47,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     AppComponent,
     DialogComponent,
     HeaderComponent,
+    MainComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -60,7 +60,6 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     FlexLayoutModule,
     HttpClientModule,
     MaterialModule,
-    MeterModule,
     StoreModule.forRoot(reducers),
     TranslateModule.forRoot({
       loader: {

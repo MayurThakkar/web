@@ -26,7 +26,7 @@ export class AuthService {
         this._ngAuth.authState.subscribe((user) => {
             if (user) {
                 this._store.dispatch(new Auth.SetAuthenticated());
-                this._router.navigate(['/meter']);
+                this._router.navigate(['/']);
             } else {
                 // TODO: deal with unsubscription undefined
                 // this._meterService.cancelSubscription();
