@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
     imports: [
@@ -10,12 +11,14 @@ import { MaterialModule } from '../material.module';
         FormsModule,
         MaterialModule,
         FlexLayoutModule,
+        TranslateModule
     ],
     exports: [
         CommonModule,
         FormsModule,
         MaterialModule,
         FlexLayoutModule,
+        TranslateModule,
     ]
 })
 export class SharedModule {}

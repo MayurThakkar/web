@@ -1,7 +1,7 @@
 <mat-sidenav-container>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <div><a routerLink="/">Meter App</a></div>
+            <div><a routerLink="/">{{'app.meter-app' | translate}}</a></div>
             <div fxFlex fxLayout fxLayoutAlign="flex-end">
                 <button mat-button class="drop-down-language"
                     [matMenuTriggerFor]="languageMenu">
@@ -9,16 +9,15 @@
                 </button>
                 <mat-menu #languageMenu="matMenu">
                     <button mat-menu-item *ngFor="let language of languages" 
-                        [(value)]="language.value"
                         (click)="selectLanguage(language.value)">
                         {{language.label | translate}}
                     </button>
                 </mat-menu>
                 <div fxLayoutGap="10px" fxHide.xs>
                     <a *ngIf="!(isAuth$ | async)" routerLink="/login">{{'app.login' | translate}}</a>
-                    <a *ngIf="!(isAuth$ | async)" routerLink="/signup">SignUp</a>
-                    <a *ngIf="isAuth$ | async" routerLink="/meter">Meter</a>
-                    <a *ngIf="isAuth$ | async" (click)="onLogout()">Logout</a>
+                    <a *ngIf="!(isAuth$ | async)" routerLink="/signup">{{'app.signup' | translate}}</a>
+                    <a *ngIf="isAuth$ | async" routerLink="/meter">{{'app.meter' | translate}}</a>
+                    <a *ngIf="isAuth$ | async" (click)="onLogout()">{{'app.logout' | translate}}</a>
                 </div>
                 <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-xs>
                     <mat-icon>menu</mat-icon>
@@ -33,15 +32,15 @@
         <mat-nav-list>
             <a mat-list-item
                 *ngIf="!(isAuth$ | async)"
-                routerLink="/login" (click)="sidenav.toggle()">Login</a>
+                routerLink="/login" (click)="sidenav.toggle()">{{'app.login' | translate}}</a>
             <a mat-list-item
                 *ngIf="!(isAuth$ | async)"
-                routerLink="/signup" (click)="sidenav.toggle()">SignUp</a>
+                routerLink="/signup" (click)="sidenav.toggle()">{{'app.signup' | translate}}</a>
             <a mat-list-item
                 *ngIf="isAuth$ | async"
                 routerLink="/meter"
-                (click)="sidenav.toggle()">Meter</a>
-            <a mat-list-item *ngIf="isAuth$ | async" (click)="onLogout()">Logout</a>
+                (click)="sidenav.toggle()">{{'app.meter' | translate}}</a>
+            <a mat-list-item *ngIf="isAuth$ | async" (click)="onLogout()">{{'app.logout' | translate}}</a>
         </mat-nav-list>
     </mat-sidenav>
 </mat-sidenav-container>

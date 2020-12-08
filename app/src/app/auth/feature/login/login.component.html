@@ -14,7 +14,9 @@
                 email
                 required
                 #emailInput="ngModel">
-            <mat-error *ngIf="!emailInput.hasError('required')">Email is invalid.</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">
+                {{'login.emailInvalid' | translate}}
+            </mat-error>
         </mat-form-field>
         <mat-form-field>
             <input
@@ -26,7 +28,9 @@
                 required
                 minlength="8"
                 #pwInput="ngModel">
-            <mat-error *ngIf="pwInput.value?.length != 8">Has to be 8 character long.</mat-error>
+            <mat-error *ngIf="pwInput.value?.length != 8">
+                {{ 'login.passwordlength' | translate }}
+            </mat-error>
         </mat-form-field>
         <button
             mat-raised-button
@@ -34,7 +38,7 @@
             type="Submit"
             [disabled]="formRef.invalid"
             color="primary">
-                Submit
+                {{'app.login' | translate}}
         </button>
         <mat-spinner *ngIf="isLoading"></mat-spinner>
     </form>

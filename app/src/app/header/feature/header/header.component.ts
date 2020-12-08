@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class HeaderComponent implements OnInit {
 
   isAuth$: Observable<boolean>;
+  userName$: Observable<string>;
 
   constructor(
     private _translate: TranslateService,
@@ -27,6 +28,7 @@ export class HeaderComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.userName$ = this._store.select(fromRoot.getUser);
     this.isAuth$ = this._store.select(fromRoot.getIsAuth);
   }
 
