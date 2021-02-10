@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { AuthGuard } from './auth/auth.guard';
-import { MainComponent } from './main/feature/main.component';
+import { NativeScriptRouterModule } from '@nativescript/angular';
+import { Routes } from '@angular/router';
 
-const routes: Routes = [
+import { MainComponent } from './main/feature/main.component';
+import { AuthGuard } from './auth/auth.guard';
+
+export const routes: Routes = [
   { path: '', component: MainComponent, canActivate: [AuthGuard] },
   {
     path: 'meter',
@@ -13,8 +15,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [AuthGuard]
+  imports: [NativeScriptRouterModule.forRoot(routes)],
+  exports: [NativeScriptRouterModule]
 })
 export class AppRoutingModule { }

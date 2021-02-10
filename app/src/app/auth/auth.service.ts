@@ -25,7 +25,7 @@ export class AuthService {
     initAuthListener() {
         this._ngAuth.authState.subscribe((user) => {
             if (user) {
-                this._store.dispatch(new Auth.SetAuthenticated());
+                this._store.dispatch(new Auth.SetAuthenticated(user.email));
                 this._router.navigate(['/']);
             } else {
                 // TODO: deal with unsubscription undefined

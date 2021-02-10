@@ -21,11 +21,19 @@ export class MeterService {
   }
 
   addNewMeterData(newData: IDataDTO) {
-    this.db.collection('meterData').add(newData);
+    const id = this.db.createId();
+    const item: IDataDTO = { id, ...newData};
+    this.db.collection('meterData').add(item);
+  }
+
+  updateData(data: IDataDTO) {
+    console.log("data db", this.db.collection('meterData').doc(data.id));
+    this.db.collection('meterData').doc(data.id).update(data);
   }
 
   deleteMeterData(data: IDataDTO) {
-    this.db.collection('meterData').doc(data.name).delete();
+    console.error("delete", data);
+    this.db.collection('meterData').doc(data.id).delete();
   }
 
   cancelSubscription() {

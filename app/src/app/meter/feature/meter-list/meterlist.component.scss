@@ -4,12 +4,16 @@
 
   .center-wrapper {
     max-width: 800px;
-  }
-  
-  .table-content {
     width: 800px;
   }
-  
+
   .mat-table {
     width: 100%;
   }
+
+  .input-search {
+    background-color: lightgrey;
+    border-radius: 25px;
+    border: none;
+    padding: 0 10px 0 10px;
+ }

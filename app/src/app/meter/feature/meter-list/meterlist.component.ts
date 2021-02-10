@@ -56,26 +56,34 @@ export class MeterlistComponent implements OnInit, AfterViewInit {
       element = {}
     }
     element.active = enable;
+    this.meterService.updateData({
+      id: element.id,
+      active: enable
+    });
   }
 
   updateActive1(element, enable: boolean) {
-    if (_.isNil(element)) {
-      element = {}
-    }
-    element.active = enable;
+
+    console.error("element", element);
+
+    this.meterService.updateData({
+      id: element.id,
+      active: enable
+    });
   }
 
   addElement() {
     let newData: MeterList = {
-      name: 'konstanz',
-      location: 'Bavaria',
+      name: 'stuttgart',
+      location: 'baden-wurtternberg',
       active: true,
-      active1: false,
+      active1: true,
     }
     this.meterService.addNewMeterData(newData);
   }
 
   delete(data: MeterList) {
+    console.error("delete", data);
     this.meterService.deleteMeterData(data);
   }
 }

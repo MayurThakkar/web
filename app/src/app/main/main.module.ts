@@ -10,4 +10,4 @@ import { MainComponent } from './feature/main.component';
         SharedModule        
     ]
 })
-export class MeterModule {}
+export class MainModule {}

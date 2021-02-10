@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import * as fromRoot from '../../../app.reducer';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from '@src/app/auth/auth.service';
 
 @Component({
   selector: 'app-header',
