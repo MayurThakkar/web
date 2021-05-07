@@ -1,0 +1,25 @@
+<mat-card class="container">
+  <button class="back-list-button" routerLink="/" mat-flat-button data-cy="back-button">
+    <img draggable="false" src="assets/icons/arrow-back.svg" />back to the list
+  </button>
+
+  <div class="row posting-content" *ngIf="postingDescription$ | async as postingDescription; else spinner">
+    <mat-card-title class="posting posting-name" data-cy="position-name">{{ postingDescription?.name }}</mat-card-title>
+    <mat-card-subtitle data-cy="position-location"
+      >{{ postingDescription?.location.city }}, {{ postingDescription?.location.region }}</mat-card-subtitle
+    >
+    <mat-card-content class="posting-description">
+      <mat-card-subtitle style="border-bottom: solid lightgrey 1px">Job Description:</mat-card-subtitle>
+      <p [innerHtml]="postingDescription?.jobAd.sections.jobDescription.text" data-cy="job-description"></p>
+      <mat-card-subtitle style="border-bottom: solid lightgrey 1px">Requirements:</mat-card-subtitle>
+      <p data-cy="job-qualification" [innerHtml]="postingDescription?.jobAd.sections.qualifications.text"></p>
+    </mat-card-content>
+    <!-- TODO: Add functionality to the apply button -->
+    <div>
+      <button mat-raised-button style="background-color: darkseagreen">Apply</button>
+    </div>
+  </div>
+  <ng-template #spinner>
+    <mat-spinner [diameter]="60"></mat-spinner>
+  </ng-template>
+</mat-card>

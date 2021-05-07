@@ -1,0 +1,45 @@
+.container {
+  width: 1000px;
+}
+
+.button-wrapper,
+.list-wrapper {
+  padding-left: 20px;
+}
+
+.button-wrapper {
+  max-width: 350px;
+}
+
+.list-wrapper {
+  max-height: 800px;
+  overflow-y: auto;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.drop-down-button {
+  width: 150px;
+  height: 25px;
+  background-color: lightgrey;
+}
+
+.mat-menu-panel {
+  height: 200px;
+}
+
+.posting {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.posting-name {
+  font-size: 18px;
+}
+
+.posting-list {
+  margin: 0;
+  :hover {
+    background-color: lightgrey;
+  }
+}

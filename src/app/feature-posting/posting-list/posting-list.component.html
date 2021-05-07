@@ -1,0 +1,43 @@
+<mat-card class="container">
+  <div class="row justify-content-between button-wrapper">
+    <select
+      *ngIf="countryList$ | async as countryList"
+      class="drop-down-button"
+      [(ngModel)]="countryFilter"
+      (change)="openPostingList()"
+      data-cy="country-select"
+    >
+      <option value="" disabled selected hidden>Country</option>
+      <option [value]="''">All</option>
+      <option *ngFor="let country of countryList" [value]="country.alpha2Code">
+        {{ country.name }}
+      </option>
+    </select>
+
+    <select
+      *ngIf="departmentList$ | async as departmentList"
+      class="drop-down-button"
+      [(ngModel)]="departmentFilter"
+      (change)="openPostingList()"
+      data-cy="department-select"
+    >
+      <option value="" disabled selected hidden>Department</option>
+      <option [value]="''">All</option>
+      <option *ngFor="let department of departmentList?.content" [value]="department.id">
+        {{ department.label }}
+      </option>
+    </select>
+  </div>
+
+  <div class="row justify-content-start list-wrapper" *ngIf="postingList$ | async as postingList; else spinner">
+    <mat-card-actions class="posting-list" *ngFor="let list of postingList?.content">
+      <div data-cy="posting-list" (click)="openPostingDescription(list.id)">
+        <mat-card-title class="posting posting-name">{{ list.name }}</mat-card-title>
+        <mat-card-subtitle class="posting">{{ list.location.city }}, {{ list.location.region }}</mat-card-subtitle>
+      </div>
+    </mat-card-actions>
+  </div>
+  <ng-template #spinner>
+    <mat-spinner [diameter]="60"></mat-spinner>
+  </ng-template>
+</mat-card>

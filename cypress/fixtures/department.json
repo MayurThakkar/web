@@ -1,0 +1,39 @@
+{
+  "content": [
+    {
+      "id": 18554,
+      "label": "Marketing",
+      "description": null
+    },
+    {
+      "id": 18571,
+      "label": "Engineering",
+      "description": null
+    },
+    {
+      "id": 18588,
+      "label": "Product",
+      "description": null
+    },
+    {
+      "id": 18605,
+      "label": "Client Success",
+      "description": null
+    },
+    {
+      "id": 54016,
+      "label": "Sales",
+      "description": null
+    },
+    {
+      "id": 354474,
+      "label": "Finance & Admin",
+      "description": null
+    },
+    {
+      "id": 734883,
+      "label": "Internal",
+      "description": null
+    }
+  ]
+}

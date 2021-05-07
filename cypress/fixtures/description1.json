@@ -1,0 +1,97 @@
+{
+  "id": "743999746008472",
+  "name": "Junior Frontend Software Engineer",
+  "uuid": "216306c2-4f39-49a6-9ee9-d2e395e5925e",
+  "refNumber": "REF956H",
+  "company": {
+    "name": "SmartRecruiters Inc",
+    "identifier": "smartrecruiters"
+  },
+  "location": {
+    "city": "Kraków",
+    "region": "małopolskie",
+    "country": "pl",
+    "address": "Fabryczna 20A",
+    "postalCode": "31-553",
+    "remote": false
+  },
+  "customField": [
+    {
+      "fieldId": "58b7e4d6e4b0885c92cd98ee",
+      "fieldLabel": "Department",
+      "valueId": "18571",
+      "valueLabel": "Engineering"
+    },
+    {
+      "fieldId": "COUNTRY",
+      "fieldLabel": "Country",
+      "valueId": "pl",
+      "valueLabel": "Poland"
+    },
+    {
+      "fieldId": "58b7e4d6e4b0885c92cd98eb",
+      "fieldLabel": "Brands",
+      "valueId": "default",
+      "valueLabel": "SmartRecruiters Inc"
+    },
+    {
+      "fieldId": "562ff01ce4b06de2b1d46caf",
+      "fieldLabel": "Priority",
+      "valueId": "50368069-c1aa-45c4-8cb7-4eb2da296a53",
+      "valueLabel": "P2"
+    }
+  ],
+  "releasedDate": "2021-05-07T11:08:11.000Z",
+  "creator": {
+    "name": "Katarzyna Imbierowicz",
+    "avatarUrl": "https://c.smartrecruiters.com/sr-employee-image-prod/5e32a4769a083c78330f2bc2?r=s3&_1583146110033"
+  },
+  "postingUrl": "https://jobs.smartrecruiters.com/smartrecruiters/743999746008472-junior-frontend-software-engineer",
+  "applyUrl": "https://jobs.smartrecruiters.com/smartrecruiters/743999746008472-junior-frontend-software-engineer?oga=true",
+  "referralUrl": "https://jobs.smartrecruiters.com/external-referrals/company/smartrecruiters/publication/216306c2-4f39-49a6-9ee9-d2e395e5925e?dcr_id=DCRA1",
+  "jobAd": {
+    "sections": {
+      "companyDescription": {
+        "title": "Company Description",
+        "text": "<p>At SmartRecruiters, our mission is to connect people with jobs at scale. That’s why we’ve built our modern Talent Acquisition Platform to help companies hire the best talent and to help people find a job they love! </p><p>Over the last years, we expanded our customer base to 4000 companies. Our platform is used by hiring teams of Twitter, Visa, LinkedIn, Ubisoft or CD Project RED. We also helped over 50 million candidates through their job search journey.</p><p>We offer a competitive salary, generous equity, unlimited PTO and strong career progression opportunities. We enjoy a collaborative, remote first environment that is powered up by offices in San Francisco, Berlin, Krakow, Paris, London, and Spokane. We pride ourselves on being a product first organization, and we have a spot open on our engineering team!</p><p> </p>"
+      },
+      "jobDescription": {
+        "title": "Job Description",
+        "text": "<p>We are looking for a talented Junior Frontend Engineer to join our amazing team! Our engineers work on one of the most important problems in the modern economy - connecting people with jobs. Our teams build a state of art technology platform to help millions of job seekers on their journey.  </p><p>What will you do:</p><ul><li><p>Develop with Angular/Pug/Sass/Node.js/TypeScript/</p></li><li><p>Participate in a full life-cycle of the product (including problem discovery, prototyping, design, implementation and measuring adoption)</p></li><li><p>Collaborate with experienced engineers, product managers and designers </p></li><li><p>Write semantic, modular, efficient code for creating lightweight apps.</p></li><li><p>Be responsible for shipping responsive, accessible and clean user experience of our features</p></li><li><p>Participate in research and development of a new Design System for Candidate Experience solutions</p></li><li><p>Bring your own product ideas to life</p></li><li><p>Work with passionate people and solve one of the most important problems of a modern economy - hiring great people</p></li></ul>"
+      },
+      "qualifications": {
+        "title": "Qualifications",
+        "text": "<ul><li><p>Good command of Javascript</p></li><li><p>Familiarity with modern js frameworks Angular, React, Vue or similar javascript frameworks</p></li><li><p>Understanding of RESTful APIs</p></li><li><p>Familiarity with Node.js ecosystem</p></li><li><p>Familiarity with usability best practices</p></li><li><p>Very good level of English (both verbal and written)</p></li></ul>"
+      },
+      "additionalInformation": {
+        "title": "Additional Information",
+        "text": "<p>We are an equal opportunity employer and we encourage diversity of thought, age, race, gender, education, and culture. Thanks to this approach, world class enterprises like Adidas, IKEA, VISA, and Square abandoned their Application Tracking Systems for our modern talent acquisition solution. What once started as a freemium product is now one of the world&apos;s fastest growing enterprise solutions.</p><p>We are a series D funded startup. Our entrepreneurial environment will make you feel supported, grow your career, and make it a joy to go to the office. We operate on four values: CEO of your job, As One, Smarter, and Impact. We expect you to own your role and have the confidence to bring creative ideas to the hands of millions.</p><p> </p><p> </p>"
+      }
+    }
+  },
+  "industry": {
+    "id": "computer_software",
+    "label": "Computer Software"
+  },
+  "function": {
+    "id": "engineering",
+    "label": "Engineering"
+  },
+  "department": {
+    "id": 18571,
+    "label": "Engineering"
+  },
+  "experienceLevel": {
+    "id": "entry_level",
+    "label": "Entry Level"
+  },
+  "typeOfEmployment": {
+    "id": "permanent",
+    "label": "Full-time"
+  },
+  "language": {
+    "code": "en",
+    "label": "English",
+    "labelNative": "English (US)"
+  }
+}

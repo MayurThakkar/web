@@ -1,0 +1,26 @@
+.container {
+  width: 1000px;
+}
+
+.back-list-button {
+  cursor: pointer;
+  padding: 0;
+}
+
+.posting {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.posting-name {
+  font-size: 18px;
+}
+
+.posting-content {
+  padding-top: 10px;
+}
+
+.posting-description {
+  max-height: 650px;
+  overflow-y: auto;
+}
