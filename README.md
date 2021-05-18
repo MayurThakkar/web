@@ -1,4 +1,4 @@
-# Job Posting
+# Job Posting mainly E2E testing
 
 Run 'npm install' to install all packages.
 
